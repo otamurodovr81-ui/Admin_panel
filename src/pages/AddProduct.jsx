@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import toast from "react-hot-toast";
 
 function AddProduct({ setProducts }) {
     const { dark } = useTheme();
@@ -54,7 +55,7 @@ function AddProduct({ setProducts }) {
 
         setProducts((prev) => [...prev, newProduct]);
 
-        alert("Mahsulot muvaffaqiyatli qo'shildi!");
+        toast.success("Mahsulot muvaffaqiyatli qo'shildi!");
 
         setProduct(initialProduct);
         navigate("/List");
